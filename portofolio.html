@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | JNPage</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash darkmode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen antialiased">
+
+    <!-- header -->
+    <header id="app-header"></header>
+
+    <!-- konten utama -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-12 w-full relative z-10">
+        
+        <!-- judul -->
+        <div class="animasi-masuk mb-16 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Koleksi <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">Karya</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">Portofolio aku selama mengikuti organisasi.</p>
+        </div>
+        
+        <!-- grid kategori -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+            
+            <!-- kategori 1: desain grafis -->
+            <div class="animasi-masuk delay-1">
+                <a href="karya-desain.html" class="group block bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.4)] transform-gpu backface-hidden hover:-translate-y-3 hover:scale-105 active:scale-95 transition-all duration-300 border border-gray-200 dark:border-gray-700 h-full">
+                    
+                    <div class="h-64 bg-gradient-to-br from-indigo-500 to-purple-600 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-24 h-24 text-white/90 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300 relative z-20 drop-shadow-lg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.879-3.879a3 3 0 10-4.242-4.242l-3.879 3.879a15.998 15.998 0 00-4.648 4.764m3.879-3.879a3 3 0 11-4.242 4.242m4.242-4.242L8.632 11.5l-3.42 3.42" />
+                        </svg>
+                    </div>
+                        <div class="p-8 text-center relative z-20 bg-transparent">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Desain Grafis</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Poster, Feeds Instagram Organisasi.</p>
+                        <span class="inline-flex items-center gap-2 mt-6 text-indigo-600 dark:text-indigo-400 font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all duration-300">
+                            Lihat Galeri <span class="text-lg">&rarr;</span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- kategori 2: video editing -->
+            <div class="animasi-masuk delay-2">
+                <a href="karya-video.html" class="group block bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl overflow-hidden shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(225,29,72,0.4)] transform-gpu backface-hidden hover:-translate-y-3 hover:scale-105 active:scale-95 transition-all duration-300 border border-gray-200 dark:border-gray-700 h-full">
+                    <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-950 dark:from-gray-700 dark:to-gray-900 relative flex items-center justify-center overflow-hidden">
+                        <div class="absolute inset-0 bg-white/10 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" class="w-24 h-24 text-white/90 transform group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300 relative z-20 drop-shadow-lg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                        </svg>
+                    </div>
+                    <div class="p-8 text-center relative z-20 bg-transparent">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors duration-300">Video Editing</h3>
+                        <p class="text-gray-600 dark:text-gray-400 leading-relaxed">After Movie Program Kerja Organisasi.</p>
+                        <span class="inline-flex items-center gap-2 mt-6 text-rose-500 dark:text-rose-400 font-bold text-sm uppercase tracking-wider group-hover:gap-4 transition-all duration-300">
+                            Lihat Galeri <span class="text-lg">&rarr;</span>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300 relative z-10"></footer>
+    
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | JNPage</title>
+    
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash dark mode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen">
+
+    <!-- header -->
+    <header id="app-header"></header>
+
+    <!-- konten utama -->
+    <main class="animasi-masuk flex-grow max-w-6xl mx-auto px-4 py-12 md:py-24 w-full flex flex-col md:flex-row items-center gap-12 justify-between">
+        
+        <div class="md:w-1/2 space-y-6 text-center md:text-left">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 font-semibold text-sm">
+                Desainer Grafis & Video Editor
+            </div>
+            
+            <!-- teks typewriter -->
+            <h1 id="typewriter-text" class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight min-h-[96px] md:min-h-[144px]">
+                <!-- diisi js -->
+            </h1>
+            
+            <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Halo Kenalin aku Nanda, Mahasiswa S1 Ilmu Komputer Undiksha dengan hobi editing dan desaining.
+            </p>
+            
+            <div class="pt-2 flex justify-center md:justify-start space-x-4">
+                <!-- tombol karya -->
+                <a href="portofolio.html" class="bg-indigo-600 text-white px-8 py-3 rounded-lg hover:bg-indigo-700 hover:shadow-[0_0_20px_rgba(79,70,229,0.5)] transition-all duration-300 transform hover:scale-110 font-medium">
+                    Lihat Karya
+                </a>
+                
+                <!-- tombol profil -->
+                <a href="profil.html" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md text-gray-800 dark:text-gray-200 px-8 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:scale-110 font-medium">
+                    Profil Saya
+                </a>
+            </div>
+        </div>
+
+        <div class="md:w-1/2 flex flex-col items-center">
+            <!-- foto profil -->
+            <div class="animate-float w-56 h-56 md:w-72 md:h-72 rounded-full border-4 border-indigo-500 shadow-xl mb-6 overflow-hidden flex-shrink-0">
+                <img src="assets/img/fotoprofil1.JPG" alt="Foto Profil" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center">
+                <h4 class="font-bold text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">Tools Keahlian</h4>
+                <!-- tag keahlian -->
+                <div class="flex flex-wrap justify-center gap-2">
+                    <span class="px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm rounded text-sm font-medium transition-all duration-300 hover:border-[#9999FF] hover:text-[#9999FF] hover:-translate-y-1">Premiere Pro</span>
+                    
+                    <span class="px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm rounded text-sm font-medium transition-all duration-300 hover:border-[#31A8FF] hover:text-[#31A8FF] hover:-translate-y-1">Photoshop</span>
+                    
+                    <span class="px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm rounded text-sm font-medium transition-all duration-300 hover:border-[#FF9A00] hover:text-[#FF9A00] hover:-translate-y-1">Illustrator</span>
+                    
+                    <span class="px-3 py-1 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-sm rounded text-sm font-medium transition-all duration-300 hover:border-[#9999FF] hover:text-[#9999FF] hover:-translate-y-1">After Effects</span>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- footer -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300"></footer>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

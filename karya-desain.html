@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Desain Grafis | JNPage</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash dark mode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen antialiased">
+
+    <!-- header -->
+    <header id="app-header"></header>
+
+    <!-- konten utama -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-10 w-full relative z-10">
+        
+        <!-- tombol kembali -->
+        <a href="portofolio.html" class="animasi-masuk inline-flex items-center gap-2 mb-10 text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 font-semibold transition-all duration-300 hover:-translate-x-1 w-fit cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Kembali ke Kategori
+        </a>
+
+        <!-- judul -->
+        <div class="animasi-masuk delay-1 mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Koleksi <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Desain Grafis</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg">Kumpulan karya desain visual, poster, dan materi promosi yang telah saya kerjakan.</p>
+        </div>
+
+        <!-- daftar gambar desain -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <!-- desain 1 -->
+            <div class="animasi-masuk delay-2 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+                
+                <!-- wadah gambar -->
+                <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                    <img src="assets/img/project/img1.png" alt="Desain Poster" class="w-full h-80 object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                
+                <!-- detail desain -->
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Feed Juara Lomba MLBB</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Desain poster juara lomba Dies Natalis 33 Undiksha.</p>
+
+                    <!-- tombol instagram -->
+                    <a href="https://www.instagram.com/p/DTuyjbUEunM/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500 dark:hover:text-white transition-all duration-300 hover:-translate-y-1 w-fit cursor-pointer">
+                        Buka di Instagram &nearr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- desain 2 -->
+            <div class="animasi-masuk delay-3 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+                
+                <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                    <img src="assets/img/project/img2.png" alt="Desain Feeds 1" class="w-full h-80 object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Feed Fungsionaris BEM FTK</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Desain pengenalan fungsionaris.</p>
+                    
+                    <a href="https://www.instagram.com/p/DLsMplkSKxc/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500 dark:hover:text-white transition-all duration-300 hover:-translate-y-1 w-fit cursor-pointer">
+                        Buka di Instagram &nearr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- desain 3 -->
+            <div class="animasi-masuk delay-3 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+                
+                <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                    <img src="assets/img/project/img3.png" alt="Desain Feeds 2" class="w-full h-80 object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Pamflet Pemlihan Presiden & Wakil Presiden Mahasiswa Undiksha 2026</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Desain informasi pemilihan umum raya.</p>
+                    
+                    <a href="https://www.instagram.com/p/DXljY8wj0eC/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500 dark:hover:text-white transition-all duration-300 hover:-translate-y-1 w-fit cursor-pointer">
+                        Buka di Instagram &nearr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- desain 4 -->
+            <div class="animasi-masuk delay-3 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+                
+                <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                    <img src="assets/img/project/img4.png" alt="Desain Feeds 3" class="w-full h-80 object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Feed Pendaftaran Calon Ketua BEM FTK</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Informasi pendaftaran calon ketua baru periode 2026.</p>
+                    
+                    <a href="https://www.instagram.com/reel/DUNlQIgEgCF/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border border-indigo-100 dark:border-indigo-800 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-indigo-500 hover:text-white dark:hover:bg-indigo-500 dark:hover:text-white transition-all duration-300 hover:-translate-y-1 w-fit cursor-pointer">
+                        Buka di Instagram &nearr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300 relative z-10"></footer>
+    
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

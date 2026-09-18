@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Editing Video | JNPage</title>
+    
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash dark mode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen antialiased">
+
+    <!-- header -->
+    <header id="app-header"></header>
+
+    <!-- konten utama -->
+    <main class="flex-grow max-w-6xl mx-auto px-4 py-10 w-full relative z-10">
+        
+        <!-- tombol kembali -->
+        <a href="portofolio.html" class="animasi-masuk inline-flex items-center gap-2 mb-10 text-gray-500 hover:text-rose-600 dark:text-gray-400 dark:hover:text-rose-400 font-semibold transition-all duration-300 hover:-translate-x-1 w-fit cursor-pointer">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Kembali ke Kategori
+        </a>
+
+        <!-- judul -->
+        <div class="animasi-masuk delay-1 mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-3 tracking-tight">Daftar Karya <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">Video</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg">Silakan putar video di bawah ini untuk melihat detail *keyframes* dan transisi hasil editing saya.</p>
+        </div>
+
+        <!-- daftar video -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <!-- desain 3 -->
+            <div class="animasi-masuk delay-3 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+                
+                <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                    <img src="assets/img/project/gk2.png" alt="Desain Feeds 2" class="w-full h-80 object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Ganesha Kelana #1 Pesta Kesenian Bali Tahun 2026</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Pesta Kesenian Bali (PKB) adalah parade, eksibisi, dan festival kesenian tahunan terbesar di Bali yang menjadi puncak perayaan budaya sekaligus wadah utama bagi para seniman lokal untuk melestarikan, menggali, dan mengembangkan nilai-nilai seni budaya luhur masyarakat Bali.Festival ini menjadi salah satu daya tarik wisata budaya utama karena mempertemukan seluruh elemen kesenian dari 9 kabupaten/kota di Bali, serta partisipasi dari luar daerah hingga luar negeri.</p>
+
+                    <!-- tombol instagram -->
+                    <a href="https://www.instagram.com/reel/DamU5_IJQ90/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-800 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 dark:hover:text-white transition-all duration-300 hover:-translate-y-1 w-fit cursor-pointer">
+                        Buka di Instagram &nearr;
+                    </a>
+                </div>
+            </div>
+
+             <!-- desain 3 -->
+            <div class="animasi-masuk delay-3 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col">
+                
+                <div class="relative overflow-hidden border-b border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900">
+                    <img src="assets/img/project/gk1.png" alt="Desain Feeds 2" class="w-full h-80 object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                </div>
+                
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">Ganesha Kelana #2 Buleleng Festival Tahun 2026</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-6 flex-grow">Buleleng Festival (Bulfest) adalah perhelatan seni, budaya, dan ekonomi kreatif terbesar di wilayah Bali Utara. Festival tahunan yang diselenggarakan oleh Pemerintah Kabupaten Buleleng ini bertujuan untuk melestarikan warisan leluhur, mempromosikan potensi daerah, serta menjadi motor penggerak ekonomi bagi masyarakat lokal.</p>
+
+                    <!-- tombol instagram -->
+                    <a href="https://www.instagram.com/reel/DcWTj9MPVOS/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==" target="_blank" class="inline-flex items-center justify-center gap-2 bg-rose-50 dark:bg-rose-900/30 text-rose-600 dark:text-rose-400 border border-rose-100 dark:border-rose-800 font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-rose-500 hover:text-white dark:hover:bg-rose-500 dark:hover:text-white transition-all duration-300 hover:-translate-y-1 w-fit cursor-pointer">
+                        Buka di Instagram &nearr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300 relative z-10"></footer>
+    
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

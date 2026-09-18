@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisasi | JNPage</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash dark mode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen antialiased">
+
+    <!-- header -->
+    <header id="app-header"></header>
+
+    <!-- konten utama -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-12 w-full relative z-10">
+        
+        <!-- judul -->
+        <div class="animasi-masuk mb-12 text-center">
+            <h2 class="text-4xl font-extrabold mb-4 tracking-tight">Pengalaman <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Organisasi</span></h2>
+            <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">Beberapa Organisasi yang pernah saya ikuti.</p>
+        </div>
+
+        <!-- wadah list organisasi -->
+        <div class="flex flex-col gap-6 max-w-4xl mx-auto">
+            
+            <!-- organisasi 1 -->
+            <div class="animasi-masuk delay-1 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl p-8 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-6 items-start">
+                
+                <!-- logo -->
+                <div class="w-16 h-16 flex-shrink-0 bg-white dark:bg-gray-100 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden p-2 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                    <img src="assets/img/organisasi/rema.png" alt="Logo rema" class="w-full h-full object-contain">
+                </div>
+                
+                <!-- detail -->
+                <div class="flex-grow w-full">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">BEM REMA Undiksha</h3>
+                        <span class="inline-block px-3 py-1 bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-800 rounded-full text-xs font-bold tracking-wider w-fit">
+                            2026 - 2027
+                        </span>
+                    </div>
+                    
+                    <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-3">Staff Direktorat Jenderal Kebudayaan</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Direktorat Jenderal Kebudayaan bertugas melestarikan, mengembangkan, dan mempromosikan nilai-nilai budaya melalui berbagai kegiatan yang mendorong apresiasi terhadap keberagaman budaya, sekaligus memperkuat karakter mahasiswa sebagai insan akademis yang berbudaya.
+                    </p>
+                </div>
+            </div>
+
+            <!-- organisasi 2 -->
+            <div class="animasi-masuk delay-2 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl p-8 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-6 items-start">
+                
+                <!-- logo -->
+                <div class="w-16 h-16 flex-shrink-0 bg-white dark:bg-gray-100 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden p-2 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                    <img src="assets/img/organisasi/panwa.png" alt="Logo panwa" class="w-full h-full object-contain">
+                </div>
+                
+                <!-- detail -->
+                <div class="flex-grow w-full">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">PANWASRA REMA Undiksha</h3>
+                        <span class="inline-block px-3 py-1 bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-800 rounded-full text-xs font-bold tracking-wider w-fit">
+                            2025 - 2026
+                        </span>
+                    </div>
+                    
+                    <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-3">Anggota Biro Humas</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Berperan aktif dalam menyebarkan informasi dan melakukan pengawasan seputar Pemilihan Umum Raya BEM REMA Undiksha.
+                    </p>
+                </div>
+            </div>
+
+            <!-- organisasi 3 -->
+            <div class="animasi-masuk delay-3 group bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl p-8 shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(79,70,229,0.2)] transform-gpu backface-hidden hover:-translate-y-2 transition-all duration-300 border border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-6 items-start">
+                
+                <!-- logo -->
+                <div class="w-16 h-16 flex-shrink-0 bg-white dark:bg-gray-100 rounded-2xl border border-gray-200 shadow-sm flex items-center justify-center overflow-hidden p-2 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                    <img src="assets/img/organisasi/FTK.png" alt="Logo FTK" class="w-full h-full object-contain">
+                </div>
+                
+                <!-- detail -->
+                <div class="flex-grow w-full">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-gray-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">BEM FTK Undiksha</h3>
+                        <span class="inline-block px-3 py-1 bg-indigo-50 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border border-indigo-100 dark:border-indigo-800 rounded-full text-xs font-bold tracking-wider w-fit">
+                            2025 - 2026
+                        </span>
+                    </div>
+                    
+                    <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-3">Staff Divisi Media dan Informasi</p>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Berperan dalam penyebarluasan informasi, desain sosial media, dan pengelolaan sosial media organisasi.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300 relative z-10"></footer>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

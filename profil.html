@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil | JNPage</title>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash dark mode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen">
+
+    <!-- header -->
+    <header id="app-header"></header>
+
+    <!-- konten utama -->
+    <main class="animasi-masuk flex-grow max-w-6xl mx-auto px-4 py-12 w-full">
+        
+        <!-- hero profil -->
+        <div class="flex flex-col sm:flex-row items-center sm:items-start md:items-center justify-center md:justify-start gap-6 mb-16 bg-white/60 dark:bg-gray-800/60 backdrop-blur-md p-8 rounded-3xl shadow-sm border border-gray-200 dark:border-gray-700 transition-colors duration-300">
+            
+            <!-- foto -->
+            <div class="w-32 h-32 flex-shrink-0 bg-indigo-100 dark:bg-indigo-900 rounded-full border-4 border-indigo-500 shadow-lg flex items-center justify-center text-5xl overflow-hidden hover:scale-105 transition-transform duration-300">
+               <img src="assets/img/fotoprofil1.JPG" alt="Foto Profil" class="w-full h-full object-cover"> 
+            </div>
+            
+            <!-- deskripsi -->
+            <div class="text-center sm:text-left">
+                <h1 class="text-3xl md:text-3xl font-extrabold mb-2">I Gusti Ngurah Agung Ananda Wistra Pratama</h1>
+                <p class="text-xl text-indigo-600 dark:text-indigo-400 font-semibold mb-3">Mahasiswa S1 Ilmu Komputer Undiksha</p>
+                <p class="text-gray-600 dark:text-gray-400 max-w-lg leading-relaxed">
+                <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed text-justify"></p>
+                    Halo Kenalin aku Nanda, Mahasiswa S1 Ilmu Komputer Undiksha dengan hobi editing dan desaining, dan juga sedang belajar bagaimana menjadi seorang developer baik web maupun aplikasi, dan juga tertarik belajar tentang artificial intelligence.
+                </p>
+            </div>
+        </div>
+
+        <!-- grid info -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            
+            <!-- kolom pendidikan -->
+            <div class="animasi-masuk delay-1">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="text-3xl"></span> Riwayat Pendidikan
+                </h3>
+                <div class="space-y-4">
+                    
+                    <!-- kampus -->
+                    <div class="group flex gap-5 p-5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg transition-all duration-300">
+                        <div class="w-16 h-16 flex-shrink-0 bg-white rounded-xl p-2 border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="assets/img/pendidikan/undiksha.png" alt="Undiksha" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">Universitas Pendidikan Ganesha</h4>
+                            <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-1">S1 Ilmu Komputer &bull; 2024 - Sekarang</p>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mt-2">Fokus pada pembelajaran artificial intelligence, UI/UX, dan Database.</p>
+                        </div>
+                    </div>
+
+                    <!-- smk -->
+                    <div class="group flex gap-5 p-5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg transition-all duration-300">
+                        <div class="w-16 h-16 flex-shrink-0 bg-white rounded-xl p-2 border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="assets/img/pendidikan/duta.jpg" alt="SMK 2 Tabanan" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="text-lg font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">SMK Negeri 2 Tabanan</h4>
+                            <p class="text-indigo-600 dark:text-indigo-400 font-semibold text-sm mb-1">Jurusan Multimedia &bull; 2021 - 2024</p>
+                        </div>
+                    </div>
+
+                    <!-- smp -->
+                    <div class="group flex gap-5 p-5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg transition-all duration-300">
+                        <div class="w-16 h-16 flex-shrink-0 bg-white rounded-xl p-2 border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="assets/img/pendidikan/spenduma.jpg" alt="SMP 2 Marga" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="text-lg font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">SMP Negeri 2 Marga</h4>
+                            <p class="text-gray-500 dark:text-gray-400 font-medium text-sm mb-1">2018 - 2021</p>
+                        </div>
+                    </div>
+
+                    <!-- sd -->
+                    <div class="group flex gap-5 p-5 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-2xl hover:border-indigo-500 dark:hover:border-indigo-500 hover:shadow-lg transition-all duration-300">
+                        <div class="w-16 h-16 flex-shrink-0 bg-white rounded-xl p-2 border border-gray-100 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src="assets/img/pendidikan/sd.jpg" alt="SD 1 Kukuh" class="w-full h-full object-contain">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <h4 class="text-lg font-bold group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">SD Negeri 1 Kukuh</h4>
+                            <p class="text-gray-500 dark:text-gray-400 font-medium text-sm mb-1">2012 - 2018</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- kolom skill -->
+            <div class="animasi-masuk delay-2">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="text-3xl text-yellow-500"></span> Keterampilan
+                </h3>
+                
+                <!-- kotak skill -->
+                <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-3xl p-8 shadow-sm transition-colors duration-300">
+                    
+                    <!-- hard skill -->
+                    <div class="mb-8">
+                        <h4 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4 transition-colors duration-300">Software & Tools</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700/50 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#9999FF]/10 hover:text-[#9999FF] hover:border-[#9999FF] border border-transparent hover:shadow-sm hover:-translate-y-1 cursor-none">
+                                Adobe Premiere Pro
+                            </span>
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700/50 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#31A8FF]/10 hover:text-[#31A8FF] hover:border-[#31A8FF] border border-transparent hover:shadow-sm hover:-translate-y-1 cursor-none">
+                                Adobe Photoshop
+                            </span>
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700/50 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#FF9A00]/10 hover:text-[#FF9A00] hover:border-[#FF9A00] border border-transparent hover:shadow-sm hover:-translate-y-1 cursor-none">
+                                Adobe Illustrator
+                            </span>
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700/50 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-[#9999FF]/10 hover:text-[#9999FF] hover:border-[#9999FF] border border-transparent hover:shadow-sm hover:-translate-y-1 cursor-none">
+                                Adobe After Effects
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- pembatas -->
+                    <hr class="border-gray-200 dark:border-gray-700 mb-8 transition-colors duration-300">
+
+                    <!-- soft skill -->
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4 transition-colors duration-300">Soft Skills</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:border-indigo-500 hover:text-indigo-500 transition-all duration-300 hover:-translate-y-1 cursor-none">
+                                Kreativitas Visual
+                            </span>
+                            <span class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:border-indigo-500 hover:text-indigo-500 transition-all duration-300 hover:-translate-y-1 cursor-none">
+                                Kerja Sama Tim
+                            </span>
+                            <span class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:border-indigo-500 hover:text-indigo-500 transition-all duration-300 hover:-translate-y-1 cursor-none">
+                                Problem Solving
+                            </span>
+                            <span class="px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:border-indigo-500 hover:text-indigo-500 transition-all duration-300 hover:-translate-y-1 cursor-none">
+                                Manajemen Waktu
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300 relative z-10"></footer>
+
+    <!-- script js -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
