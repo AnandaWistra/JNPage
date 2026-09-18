@@ -1,6 +1,6 @@
 // 1. simpan desain navbar
 const navbarHTML = `
-<nav class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-colors duration-300">
+<nav class="sticky top-0 z-50 bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg shadow-sm transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <a href="index.html" class="text-2xl font-bold tracking-tight">JN<span class="text-indigo-600 dark:text-indigo-400">Page.</span></a>
         
