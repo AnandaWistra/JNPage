@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Photoshop - Tugas JS | JNPage</title>
 
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- flash darkmode -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { 
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1', // indigo-500
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- css lokal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 flex flex-col min-h-screen antialiased">
+
+    <!-- header (otomatis dari script.js) -->
+    <header id="app-header"></header>
+
+    <!-- konten utama: Aplikasi Kanvas -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 py-12 w-full relative z-10 pt-28">
+        
+        <!-- Judul Halaman -->
+        <div class="animasi-masuk mb-10 text-center">
+            <span class="inline-block px-3 py-1 mb-3 text-xs font-bold text-indigo-600 bg-indigo-100 dark:bg-indigo-900/40 dark:text-indigo-400 rounded-full">Tugas Javascript</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">Mini <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Photoshop</span> Canvas</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-sm max-w-2xl mx-auto">Eksplorasi HTML5 Canvas dan DOM Manipulation Vanilla JS.</p>
+        </div>
+
+        <!-- Wadah Aplikasi -->
+        <div class="animasi-masuk delay-1 max-w-4xl mx-auto bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl p-4 md:p-6 shadow-sm border border-gray-200 dark:border-gray-700">
+            
+            <!-- Bilah Alat (Toolbar) -->
+            <div class="flex flex-wrap items-center gap-4 pb-4 mb-4 border-b border-gray-200 dark:border-gray-700">
+                
+                <!-- Alat Utama (Pencil/Eraser) -->
+                <div class="flex items-center gap-2 bg-gray-100/50 dark:bg-gray-900/50 p-1.5 rounded-full border border-gray-200 dark:border-gray-700">
+                    <button id="btnPencil" class="px-4 py-2 rounded-full bg-primary text-white text-sm font-medium flex items-center gap-2 active:scale-95 transition-all shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                        Pensil
+                    </button>
+                    <button id="btnEraser" class="px-4 py-2 rounded-full text-gray-600 dark:text-gray-400 text-sm font-medium flex items-center gap-2 hover:bg-white dark:hover:bg-gray-700 active:scale-95 transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        Penghapus
+                    </button>
+                </div>
+
+                <!-- Pemilih Warna & Ukuran -->
+                <div class="flex items-center gap-2 bg-gray-100/50 dark:bg-gray-900/50 p-1.5 rounded-full border border-gray-200 dark:border-gray-700">
+                    <label class="text-xs text-gray-500 font-semibold pl-2">Warna:</label>
+                    <input type="color" id="colorPicker" value="#6366f1" class="w-8 h-8 rounded-full border-2 border-white dark:border-gray-600 cursor-pointer transition-transform hover:scale-110">
+                    
+                    <label class="text-xs text-gray-500 font-semibold pl-2 border-l border-gray-300 dark:border-gray-600 ml-1">Ukuran:</label>
+                    <input type="range" id="sizeSlider" min="1" max="20" value="5" class="w-20 md:w-24 h-2 rounded-lg bg-gray-200 dark:bg-gray-700 cursor-pointer accent-primary transition-all">
+                    <span id="sizeValue" class="text-sm font-mono w-8 text-center text-gray-700 dark:text-gray-300">5px</span>
+                </div>
+
+                <!-- Aksi (Clear/Download) -->
+                <div class="flex items-center gap-2 ml-auto">
+                    <button id="btnClear" class="px-4 py-2 rounded-full text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/10 text-sm font-semibold flex items-center gap-2 active:scale-95 transition-all">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                        <span class="hidden md:inline">Bersihkan</span>
+                    </button>
+                    <button id="btnDownload" class="px-4 py-2 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-semibold flex items-center gap-2 hover:bg-gray-800 dark:hover:bg-white active:scale-95 transition-all shadow-md">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Simpan JPG
+                    </button>
+                </div>
+            </div>
+
+            <!-- Area Kanvas Utama -->
+            <div class="w-full h-[60vh] min-h-[400px] rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-900 relative cursor-crosshair shadow-inner">
+                <canvas id="drawingCanvas" width="1200" height="800" class="w-full h-full bg-white block"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer (otomatis dari script.js) -->
+    <footer id="app-footer" class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border-t border-gray-200 dark:border-gray-700 py-6 mt-auto transition-colors duration-300 relative z-10"></footer>
+    
+    <!-- Script Eksekusi Navbar & Footer -->
+    <script src="assets/js/script.js"></script>
+
+    <!-- Logika JavaScript untuk Kanvas -->
+    <script>
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        const colorPicker = document.getElementById('colorPicker');
+        const sizeSlider = document.getElementById('sizeSlider');
+        const sizeValue = document.getElementById('sizeValue');
+        const btnPencil = document.getElementById('btnPencil');
+        const btnEraser = document.getElementById('btnEraser');
+        const btnClear = document.getElementById('btnClear');
+        const btnDownload = document.getElementById('btnDownload');
+
+        let isDrawing = false;
+        let currentTool = 'pencil';
+        let lastX = 0;
+        let lastY = 0;
+        const canvasBackgroundColor = '#FFFFFF';
+
+        // Inisialisasi awal
+        function initCtx() {
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.fillStyle = canvasBackgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            updateToolSettings();
+        }
+
+        // Update warna & ukuran
+        function updateToolSettings() {
+            ctx.lineWidth = sizeSlider.value;
+            if (currentTool === 'pencil') {
+                ctx.strokeStyle = colorPicker.value;
+            } else {
+                ctx.strokeStyle = canvasBackgroundColor; 
+            }
+        }
+
+        // Ganti status tombol aktif
+        function setActiveButton(activeBtn) {
+            [btnPencil, btnEraser].forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white', 'shadow-sm');
+                btn.classList.add('text-gray-600', 'dark:text-gray-400', 'hover:bg-white', 'dark:hover:bg-gray-700');
+            });
+            activeBtn.classList.remove('text-gray-600', 'dark:text-gray-400', 'hover:bg-white', 'dark:hover:bg-gray-700');
+            activeBtn.classList.add('bg-primary', 'text-white', 'shadow-sm');
+        }
+
+        // Mulai menggambar
+        function startDrawing(e) {
+            isDrawing = true;
+            updateToolSettings();
+            
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            
+            // Dukungan untuk sentuhan (touch) di HP atau Mouse di PC
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+            lastX = (clientX - rect.left) * scaleX;
+            lastY = (clientY - rect.top) * scaleY;
+            
+            ctx.beginPath();
+            ctx.arc(lastX, lastY, ctx.lineWidth / 2, 0, Math.PI * 2);
+            ctx.fillStyle = ctx.strokeStyle;
+            ctx.fill();
+        }
+
+        // Proses menggambar
+        function draw(e) {
+            if (!isDrawing) return;
+            e.preventDefault(); // cegah scroll layar saat menggambar di HP
+
+            const rect = canvas.getBoundingClientRect();
+            const scaleX = canvas.width / rect.width;
+            const scaleY = canvas.height / rect.height;
+            
+            const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+
+            const currentX = (clientX - rect.left) * scaleX;
+            const currentY = (clientY - rect.top) * scaleY;
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(currentX, currentY);
+            ctx.stroke();
+
+            lastX = currentX;
+            lastY = currentY;
+        }
+
+        // Berhenti menggambar
+        function stopDrawing() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        // Event Listeners (Mouse & Touch)
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        window.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseout', stopDrawing);
+
+        canvas.addEventListener('touchstart', startDrawing, {passive: false});
+        canvas.addEventListener('touchmove', draw, {passive: false});
+        window.addEventListener('touchend', stopDrawing);
+
+        // Event Tombol Toolbar
+        colorPicker.addEventListener('input', updateToolSettings);
+        
+        sizeSlider.addEventListener('input', () => {
+            sizeValue.textContent = `${sizeSlider.value}px`;
+            updateToolSettings();
+        });
+
+        btnPencil.addEventListener('click', () => {
+            currentTool = 'pencil';
+            setActiveButton(btnPencil);
+            canvas.parentElement.classList.remove('cursor-wait');
+            canvas.parentElement.classList.add('cursor-crosshair');
+            updateToolSettings();
+        });
+
+        btnEraser.addEventListener('click', () => {
+            currentTool = 'eraser';
+            setActiveButton(btnEraser);
+            canvas.parentElement.classList.remove('cursor-crosshair');
+            canvas.parentElement.classList.add('cursor-wait');
+            updateToolSettings();
+        });
+
+        btnClear.addEventListener('click', () => {
+            ctx.fillStyle = canvasBackgroundColor;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+
+        btnDownload.addEventListener('click', () => {
+            const image = canvas.toDataURL("image/jpeg", 0.9);
+            const link = document.createElement('a');
+            link.href = image;
+            link.download = `Karya-JNPage-${new Date().getTime()}.jpg`;
+            link.click();
+        });
+
+        // Jalankan
+        initCtx();
+    </script>
+</body>
+</html>
