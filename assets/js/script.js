@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // jalankan fungsi
     aktifkanDarkMode();
     aktifkanEfekNgetik();
-    aktifkanSpotlightEffect();
 });
 
 // 5. dark mode toggle
@@ -142,22 +141,4 @@ function aktifkanEfekNgetik() {
         
         setTimeout(ngetik, 800); 
     }
-}
-
-// 7. spotlight effect (invert warna di dalam lingkaran mengikuti kursor)
-function aktifkanSpotlightEffect() {
-    const heroSection = document.getElementById('hero-section');
-    const overlay = document.getElementById('spotlight-overlay');
-    if (!heroSection || !overlay) return;
-
-    heroSection.addEventListener('mousemove', (e) => {
-        // Koordinat viewport langsung (karena overlay posisinya fixed)
-        overlay.style.setProperty('--mouse-x', e.clientX + 'px');
-        overlay.style.setProperty('--mouse-y', e.clientY + 'px');
-    });
-
-    heroSection.addEventListener('mouseleave', () => {
-        overlay.style.setProperty('--mouse-x', '-500px');
-        overlay.style.setProperty('--mouse-y', '-500px');
-    });
 }
