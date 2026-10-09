@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // jalankan fungsi
     aktifkanDarkMode();
     aktifkanEfekNgetik();
+    aktifkanSpotlightEffect();
 });
 
 // 5. dark mode toggle
@@ -145,4 +146,38 @@ function aktifkanEfekNgetik() {
         
         setTimeout(ngetik, 800); 
     }
+}
+
+// 7. spotlight effect di teks hero beranda
+function aktifkanSpotlightEffect() {
+    const heroText = document.getElementById('typewriter-text');
+    if (!heroText) return;
+
+    // Sync teks dari typewriter ke attribute data-spotlight-text
+    const syncText = () => {
+        const b1 = document.getElementById('tw-baris1')?.textContent || '';
+        const b2 = document.getElementById('tw-baris2')?.textContent || '';
+        heroText.setAttribute('data-spotlight-text', b1 + '\n' + b2);
+    };
+
+    // Auto-sync setiap typewriter mengetik karakter baru
+    const observer = new MutationObserver(syncText);
+    observer.observe(heroText, {
+        childList: true,
+        characterData: true,
+        subtree: true,
+    });
+    syncText();
+
+    // Track posisi kursor relatif terhadap h1
+    const heroSection = heroText.closest('main');
+    heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroText.getBoundingClientRect();
+        heroText.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+        heroText.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    });
+    heroSection.addEventListener('mouseleave', () => {
+        heroText.style.setProperty('--mouse-x', '-500px');
+        heroText.style.setProperty('--mouse-y', '-500px');
+    });
 }
