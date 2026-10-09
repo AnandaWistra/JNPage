@@ -146,17 +146,17 @@ function aktifkanEfekNgetik() {
 
 // 7. spotlight effect (invert warna di dalam lingkaran mengikuti kursor)
 function aktifkanSpotlightEffect() {
-    const wrapper = document.getElementById('hero-text-wrapper');
+    const heroSection = document.getElementById('hero-section');
     const overlay = document.getElementById('spotlight-overlay');
-    if (!wrapper || !overlay) return;
+    if (!heroSection || !overlay) return;
 
-    wrapper.addEventListener('mousemove', (e) => {
-        const rect = wrapper.getBoundingClientRect();
-        overlay.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-        overlay.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    heroSection.addEventListener('mousemove', (e) => {
+        // Koordinat viewport langsung (karena overlay posisinya fixed)
+        overlay.style.setProperty('--mouse-x', e.clientX + 'px');
+        overlay.style.setProperty('--mouse-y', e.clientY + 'px');
     });
 
-    wrapper.addEventListener('mouseleave', () => {
+    heroSection.addEventListener('mouseleave', () => {
         overlay.style.setProperty('--mouse-x', '-500px');
         overlay.style.setProperty('--mouse-y', '-500px');
     });
