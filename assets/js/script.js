@@ -21,15 +21,10 @@ const navbarHTML = `
 
 // 2. simpan desain footer
 const footerHTML = `
-<!-- dipisah kiri dan kanan pakai justify-between -->
 <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-    
-    <!-- teks copyright -->
     <p class="text-gray-500 dark:text-gray-400 text-sm text-center sm:text-left">
         &copy; 2026 JNPage by Ananda Wistra. All Rights Reserved.
     </p>
-    
-    <!-- link instagram -->
     <a href="https://www.instagram.com/nandahaeee?stkn=djlraWtsd25sZTc0" target="_blank" class="flex items-center space-x-2 text-gray-500 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24" class="mt-[2px]">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
@@ -42,13 +37,8 @@ const footerHTML = `
 // 3. background efek glowing orbs
 const backgroundHTML = `
 <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <!-- orb 1 (ungu kiri atas) -->
     <div class="absolute -top-[10%] -left-[10%] w-96 h-96 bg-purple-400/70 dark:bg-purple-700/70 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[90px] opacity-100 animate-blob"></div>
-    
-    <!-- orb 2 (biru kanan atas) -->
     <div class="absolute top-[20%] -right-[10%] w-96 h-96 bg-indigo-400/70 dark:bg-indigo-700/70 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[90px] opacity-100 animate-blob delay-2000"></div>
-    
-    <!-- orb 3 (pink bawah) -->
     <div class="absolute -bottom-32 left-[20%] w-96 h-96 bg-pink-400/70 dark:bg-pink-700/70 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[90px] opacity-100 animate-blob delay-4000"></div>
 </div>
 `;
@@ -61,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // suntik navbar
     const headerElement = document.getElementById("app-header");
     if(headerElement) {
-        headerElement.className = "sticky top-0 z-50";
         headerElement.innerHTML = navbarHTML;
     }
 
@@ -72,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // jalankan fungsi
     aktifkanDarkMode();
     aktifkanEfekNgetik();
+    aktifkanNavbarScroll();
 });
 
 // 5. dark mode toggle
@@ -141,4 +131,21 @@ function aktifkanEfekNgetik() {
         
         setTimeout(ngetik, 800); 
     }
+}
+
+// 7. navbar scroll effect (menyempit & ke tengah saat scroll)
+function aktifkanNavbarScroll() {
+    const header = document.getElementById('app-header');
+    if (!header) return;
+
+    const handleScroll = () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // cek posisi awal
 }
