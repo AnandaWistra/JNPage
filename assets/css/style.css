@@ -43,31 +43,18 @@ body {
   animation: blob 7s infinite;
 }
 
-.delay-2000 {
-  animation-delay: 2s;
-}
-
-.delay-4000 {
-  animation-delay: 4s;
-}
+.delay-2000 { animation-delay: 2s; }
+.delay-4000 { animation-delay: 4s; }
 
 /* 5. custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
     background: #cbd5e1;
     border-radius: 10px;
 }
-.dark ::-webkit-scrollbar-thumb {
-    background: #475569;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #818cf8;
-}
+.dark ::-webkit-scrollbar-thumb { background: #475569; }
+::-webkit-scrollbar-thumb:hover { background: #818cf8; }
 
 /* 6. animasi teks gradasi bergerak */
 .bg-clip-text {
@@ -90,4 +77,48 @@ body {
 
 .animate-float {
     animation: float 4s ease-in-out infinite;
+}
+
+/* ================= 8. NAVBAR SCROLL EFFECT (menyempit & ke tengah saat scroll) ================= */
+#app-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#app-header nav {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Kontainer di dalam nav */
+#app-header nav > div {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === STATE: SCROLLED (menyempit & ke tengah) === */
+#app-header.scrolled {
+    padding: 12px 16px 0 16px;
+}
+
+#app-header.scrolled nav {
+    max-width: 780px;
+    margin: 0 auto;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.25), 0 4px 15px -5px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.dark #app-header.scrolled nav {
+    background-color: rgba(31, 41, 55, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 4px 15px -5px rgba(139, 92, 246, 0.2);
+}
+
+#app-header.scrolled nav > div {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
