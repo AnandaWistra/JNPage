@@ -138,14 +138,31 @@ function aktifkanNavbarScroll() {
     const header = document.getElementById('app-header');
     if (!header) return;
 
+    let ticking = false;
+    let lastState = null;
+
+    const updateNavbar = () => {
+        const shouldShrink = window.scrollY > 50;
+        
+        // Hanya update class kalau state berubah (hindari repaint sia-sia)
+        if (shouldShrink !== lastState) {
+            if (shouldShrink) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            lastState = shouldShrink;
+        }
+        ticking = false;
+    };
+
     const handleScroll = () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (!ticking) {
+            window.requestAnimationFrame(updateNavbar);
+            ticking = true;
         }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // cek posisi awal
+    updateNavbar();
 }
