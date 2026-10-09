@@ -91,19 +91,3 @@ body {
 .animate-float {
     animation: float 4s ease-in-out infinite;
 }
-
-/* ================= 8. SPOTLIGHT EFFECT (invert warna di dalam lingkaran) ================= */
-#spotlight-overlay {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 40;
-    
-    /* Efek inversi warna */
-    backdrop-filter: invert(1);
-    -webkit-backdrop-filter: invert(1);
-    
-    /* Bentuk lingkaran mengikuti kursor */
-    clip-path: circle(130px at var(--mouse-x, -500px) var(--mouse-y, -500px));
-    transition: clip-path 0.08s ease-out;
-}
