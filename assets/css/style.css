@@ -85,16 +85,33 @@ body {
     top: 0;
     z-index: 50;
     width: 100%;
-    transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    transition: padding 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: padding;
 }
 
 #app-header nav {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    max-width: 100%;
+    transition: 
+        max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        border-radius 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.4s ease,
+        box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s ease;
+    will-change: max-width, border-radius, box-shadow;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    border: 1px solid transparent;
+    overflow: hidden;
 }
 
-/* Kontainer di dalam nav */
 #app-header nav > div {
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: padding 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: padding;
 }
 
 /* === STATE: SCROLLED (menyempit & ke tengah) === */
@@ -104,17 +121,15 @@ body {
 
 #app-header.scrolled nav {
     max-width: 780px;
-    margin: 0 auto;
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.05);
     box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.25), 0 4px 15px -5px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
 }
 
 .dark #app-header.scrolled nav {
-    background-color: rgba(31, 41, 55, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background-color: rgba(31, 41, 55, 0.85);
+    border-color: rgba(255, 255, 255, 0.06);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 4px 15px -5px rgba(139, 92, 246, 0.2);
 }
 
