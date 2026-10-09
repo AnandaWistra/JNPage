@@ -91,46 +91,32 @@ body {
 .animate-float {
     animation: float 4s ease-in-out infinite;
 }
-/* ================= 8. SPOTLIGHT EFFECT (kursor di teks) ================= */
+
+/* ================= 8. SPOTLIGHT EFFECT (kursor mengubah warna teks) ================= */
 #typewriter-text {
     position: relative;
-    display: inline-block;
-    /* Warna dasar teks (sebelum kena spotlight) */
-    color: inherit;
-    background: none;
-    -webkit-text-fill-color: currentColor;
 }
 
-/* Layer overlay spotlight di atas teks */
+/* Layer spotlight yang mengikuti kursor */
 #typewriter-text::after {
-    content: attr(data-text-spotlight);
+    content: attr(data-spotlight-text);
     position: absolute;
     inset: 0;
-    color: transparent;
+    white-space: pre-line;
+    pointer-events: none;
+    z-index: 2;
+    
+    /* Warna highlight - kuning → pink → ungu (bisa diganti) */
     background-image: linear-gradient(135deg, #fbbf24 0%, #ec4899 45%, #a855f7 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    /* Efek lingkaran mengikuti kursor */
     clip-path: circle(80px at var(--mouse-x, -500px) var(--mouse-y, -500px));
     transition: clip-path 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    pointer-events: none;
-    z-index: 2;
+    
+    /* Animasi gradasi bergerak */
     animation: textGradient 4s linear infinite;
-}
-
-/* Efek tambahan: glow halus di sekitar kursor saat hover */
-#typewriter-text::before {
-    content: '';
-    position: absolute;
-    inset: -20px;
-    background: radial-gradient(circle 100px at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(168, 85, 247, 0.15), transparent 70%);
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-main:hover #typewriter-text::before {
-    opacity: 1;
 }
