@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // suntik navbar
     const headerElement = document.getElementById("app-header");
     if(headerElement) {
-        headerElement.className = "sticky top-0 z-50"; // Class dipindah ke sini
+        headerElement.className = "sticky top-0 z-50";
         headerElement.innerHTML = navbarHTML;
     }
 
@@ -81,14 +81,12 @@ function aktifkanDarkMode() {
     const themeIcon = document.getElementById('themeIcon');
     const htmlElement = document.documentElement;
 
-    // set ikon saat halaman dimuat
     if (htmlElement.classList.contains('dark')) {
         if(themeIcon) themeIcon.textContent = '☀️';
     } else {
         if(themeIcon) themeIcon.textContent = '🌙';
     }
 
-    // aksi saat tombol diklik
     if(themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
             htmlElement.classList.toggle('dark');
@@ -108,12 +106,10 @@ function aktifkanDarkMode() {
 function aktifkanEfekNgetik() {
     const typeWriterElement = document.getElementById('typewriter-text');
     
-    // pastikan hanya jalan di beranda
     if (typeWriterElement) {
         const baris1 = "Halo, Saya";
         const baris2 = "Ananda Wistra"; 
         
-        // siapkan wadah teks
         typeWriterElement.innerHTML = `
             <span id="tw-baris1"></span><span id="tw-cursor" class="border-r-4 border-indigo-500 animate-pulse ml-1">&nbsp;</span><br>
             <span id="tw-baris2" class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></span>
@@ -148,36 +144,20 @@ function aktifkanEfekNgetik() {
     }
 }
 
-// 7. spotlight effect di teks hero beranda
+// 7. spotlight effect (invert warna di dalam lingkaran mengikuti kursor)
 function aktifkanSpotlightEffect() {
-    const heroText = document.getElementById('typewriter-text');
-    if (!heroText) return;
+    const wrapper = document.getElementById('hero-text-wrapper');
+    const overlay = document.getElementById('spotlight-overlay');
+    if (!wrapper || !overlay) return;
 
-    // Sync teks dari typewriter ke attribute data-spotlight-text
-    const syncText = () => {
-        const b1 = document.getElementById('tw-baris1')?.textContent || '';
-        const b2 = document.getElementById('tw-baris2')?.textContent || '';
-        heroText.setAttribute('data-spotlight-text', b1 + '\n' + b2);
-    };
-
-    // Auto-sync setiap typewriter mengetik karakter baru
-    const observer = new MutationObserver(syncText);
-    observer.observe(heroText, {
-        childList: true,
-        characterData: true,
-        subtree: true,
+    wrapper.addEventListener('mousemove', (e) => {
+        const rect = wrapper.getBoundingClientRect();
+        overlay.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+        overlay.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
     });
-    syncText();
 
-    // Track posisi kursor relatif terhadap h1
-    const heroSection = heroText.closest('main');
-    heroSection.addEventListener('mousemove', (e) => {
-        const rect = heroText.getBoundingClientRect();
-        heroText.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
-        heroText.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
-    });
-    heroSection.addEventListener('mouseleave', () => {
-        heroText.style.setProperty('--mouse-x', '-500px');
-        heroText.style.setProperty('--mouse-y', '-500px');
+    wrapper.addEventListener('mouseleave', () => {
+        overlay.style.setProperty('--mouse-x', '-500px');
+        overlay.style.setProperty('--mouse-y', '-500px');
     });
 }
